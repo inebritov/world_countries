@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',
 
     'rest_framework',
+    'djangobower',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,6 +126,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+]
 
 
 # Grappelli admin interface settings
@@ -158,3 +166,16 @@ REST_FRAMEWORK = {
         'rest_framework.filters.DjangoFilterBackend',
     ],
 }
+
+
+# Bower
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'bower_components')
+
+BOWER_INSTALLED_APPS = [
+    'angular#1.5',
+    'angular-resource#1.5',
+    'bootstrap#3.3',
+    'jquery#2.2',
+    'underscore#1.8',
+]
