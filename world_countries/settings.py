@@ -133,3 +133,4 @@ GRAPPELLI_ADMIN_TITLE = 'World countries'
 # Core application settings
 
 LANGUAGES_URL = os.getenv('LANGUAGES_URL', 'http://data.okfn.org/data/core/language-codes/r/language-codes.json')
+COUNTRIES_URL = os.getenv('COUNTRIES_URL', 'https://restcountries.eu/rest/v1/all')
