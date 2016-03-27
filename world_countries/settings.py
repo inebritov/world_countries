@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'core',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +128,8 @@ STATIC_URL = '/static/'
 # Grappelli admin interface settings
 
 GRAPPELLI_ADMIN_TITLE = 'World countries'
+
+
+# Core application settings
+
+LANGUAGES_URL = os.getenv('LANGUAGES_URL', 'http://data.okfn.org/data/core/language-codes/r/language-codes.json')
