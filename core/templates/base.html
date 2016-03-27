@@ -7,14 +7,16 @@
     <link rel="stylesheet" type="text/css" href="{% static "bootstrap/dist/css/bootstrap.css" %}">
 </head>
 
-<body ng-app="{% block ng_app %}worldCountries{% endblock %}">
-    <div class="content ng-cloak" ng-controller="{% block ngcontroller %}AppController{% endblock %}">
-        {% block content %}{% endblock content %}
+<body ng-app="{% block ng_app %}worldCountries{% endblock %}" role="document">
+    <div class="container theme-showcase" role="main">
+        <div class="content" ng-controller="{% block ngcontroller %}IndexController{% endblock %}">
+            {% block content %}{% endblock content %}
+        </div>
     </div>
 
-    <script src="{% static "underscore/underscore-min.js" %}"></script>
-    <script src="{% static "angular/angular.min.js" %}"></script>
-    <script src="{% static "angular-resource/angular-resource.min.js" %}"></script>
+    <script src="{% static "underscore/underscore.js" %}"></script>
+    <script src="{% static "angular/angular.js" %}"></script>
+    <script src="{% static "angular-resource/angular-resource.js" %}"></script>
     <script src="{% static "js/app.js" %}"></script>
 
 </body>
