@@ -1,3 +1,7 @@
+from core.models import Language
 from django.contrib import admin
 
-# Register your models here.
+
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    pass
