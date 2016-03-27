@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,3 +136,25 @@ GRAPPELLI_ADMIN_TITLE = 'World countries'
 
 LANGUAGES_URL = os.getenv('LANGUAGES_URL', 'http://data.okfn.org/data/core/language-codes/r/language-codes.json')
 COUNTRIES_URL = os.getenv('COUNTRIES_URL', 'https://restcountries.eu/rest/v1/all')
+
+
+# Django REST framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework_xml.parsers.XMLParser',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework_xml.renderers.XMLRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'rest_framework.filters.DjangoFilterBackend',
+    ],
+}
