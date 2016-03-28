@@ -9,7 +9,7 @@ angular
     return $resource(
         '/api/countries/:id', {id: '@id'},
         {
-            all: {method: 'GET', url: '/api/countries/?format=json', isArray:true}
+            all: {method: 'GET', url: '/api/countries/', isArray:true}
         }
     );
 })
