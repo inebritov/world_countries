@@ -21,12 +21,12 @@ class Command(BaseCommand):
                 Language.English = lang['English']
                 language.save()
                 updated += 1
-                self.stdout.write("Updated language {}.".format(language))
+                self.stdout.write("Updated language {}.".format(language.alpha2))
             except Language.DoesNotExist:
                 language = Language(**lang)
                 language.save()
                 added += 1
-                self.stdout.write("Added language {}.".format(language))
+                self.stdout.write("Added language {}.".format(language.alpha2))
 
         self.stdout.write('\n' + ('=' * 80))
         self.stdout.write(self.style.SUCCESS("Added: {}\nUpdated: {}".format(added, updated)))
