@@ -175,6 +175,7 @@ BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'bower_components')
 BOWER_INSTALLED_APPS = [
     'angular#1.5',
     'angular-resource#1.5',
+    'angular-route#1.5',
     'bootstrap#3.3',
     'jquery#2.2',
     'underscore#1.8',
