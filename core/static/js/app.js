@@ -1,9 +1,21 @@
 (function () {
 'use strict';
 
-angular
+angular.module('worldCountries', ['ngResource', 'ngRoute'])
 
-.module('worldCountries', ['ngResource'])
+.config(['$routeProvider',
+    function($routeProvider) {
+
+        $routeProvider
+            .when('/', {
+                templateUrl: 'static/js/pages/list.html',
+                controller: 'ListController'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    }
+])
 
 .factory('Country', function($resource) {
     return $resource(
@@ -14,7 +26,8 @@ angular
     );
 })
 
-.controller('IndexController', function ($scope, Country) {
+.controller('ListController', function ($scope, Country) {
+    $scope.pageHeader = 'Countries list';
     $scope.countries = Country.all();
 });
 
