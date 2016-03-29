@@ -49,7 +49,6 @@ angular.module('worldCountries', ['ngResource', 'ngRoute'])
 .controller('DetailsController', function ($scope, $routeParams, Country) {
     Country.get({id: $routeParams.id}, function (result) {
         $scope.country = result;
-        $scope.country.loaded = true;
     });
 });
 
