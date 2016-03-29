@@ -1,0 +1,55 @@
+<div class="page-header">
+    <h1 ng-bind="country.name"></h1>
+</div>
+
+<style>
+    table td div {
+        background-color: #c4e9f5;
+        border-radius: 2px;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 3px;
+        padding: 2px 6px;
+    }
+</style>
+
+<div class="row" ng-hide="!country.loaded">
+    <div class="col-md-6">
+        <table class="cc-table table">
+            <tbody>
+            <tr>
+                <td><strong>ISO 2 code</strong></td>
+                <td>{{ country.alpha2 }}</td>
+            </tr>
+            <tr>
+                <td><strong>ISO 3 code</strong></td>
+                <td>{{ country.alpha3 }}</td>
+            </tr>
+            <tr>
+                <td><strong>Population</strong></td>
+                <td>{{ country.population.toLocaleString() }}</td>
+            </tr>
+            <tr>
+                <td><strong>Languages</strong></td>
+                <td>
+                    <div ng-repeat="language in country.languages">
+                        {{ language }}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Neighbouring Countries</strong></td>
+                <td>
+                    <div ng-repeat="neighbor in country.neighbors">
+                        <a ng-href="#/details/{{ neighbor.id }}">{{ neighbor.name }}</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ country.name }}&amp;size=450x300&amp;sensor=false">
+    </div>
+</div>

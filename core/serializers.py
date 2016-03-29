@@ -10,11 +10,9 @@ class CountryListSerializer(serializers.ModelSerializer):
 
 
 class NeighborSerializer(serializers.ModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='country-detail')
-
     class Meta:
         model = Country
-        fields = ('name', 'url')
+        fields = ('id', 'name',)
 
 
 class CountryDetailsSerializer(serializers.ModelSerializer):

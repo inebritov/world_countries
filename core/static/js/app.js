@@ -14,6 +14,10 @@ angular.module('worldCountries', ['ngResource', 'ngRoute'])
                 templateUrl: 'static/js/pages/list.html',
                 controller: 'Top5Controller'
             })
+            .when('/details/:id', {
+                templateUrl: 'static/js/pages/details.html',
+                controller: 'DetailsController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -39,6 +43,13 @@ angular.module('worldCountries', ['ngResource', 'ngRoute'])
     $scope.pageHeader = 'Top 5 most populated countries';
     Country.top5({}, function (result) {
         $scope.countries = result.results;
+    });
+})
+
+.controller('DetailsController', function ($scope, $routeParams, Country) {
+    Country.get({id: $routeParams.id}, function (result) {
+        $scope.country = result;
+        $scope.country.loaded = true;
     });
 });
 
