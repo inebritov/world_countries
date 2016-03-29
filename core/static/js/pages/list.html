@@ -1,9 +1,22 @@
+<style>
+    .row {
+        padding: 0 20px 10px;
+    }
+
+    .row:not(:first-child) {
+        border-top: 1px solid #dddddd;
+    }
+</style>
+
 <div class="page-header">
     <h1 ng-bind="pageHeader"></h1>
 </div>
-<div class="panel" ng-repeat="country in countries">
-    <div class="clearfix">
-        <div class="pull-right">Population: <span ng-bind="country.population.toLocaleString()"></span></div>
-        <a href="#/details/{{ country.id }}"><h3 class="panel-title" ng-bind="country.name"></h3></a>
+
+<div class="container col-md-12">
+    <div class="row" ng-repeat="country in countries">
+        <h5><a class="col-md-6" href="#/details/{{ country.id }}">{{ country.name }}</a></h5>
+        <div class="col-md-6">
+            <span class="pull-right">Population: {{ country.population.toLocaleString() }}</span>
+        </div>
     </div>
 </div>

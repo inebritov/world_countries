@@ -176,5 +176,5 @@ BOWER_INSTALLED_APPS = [
     'angular#1.5',
     'angular-resource#1.5',
     'angular-route#1.5',
-    'bootstrap#3.3',
+    'bower-bootswatch-paper',
 ]

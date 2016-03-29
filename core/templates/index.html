@@ -5,7 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <title>World Countries</title>
-    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/dist/css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bower-bootswatch-paper/css/paper.css" %}">
+    <style>
+        nav.navbar {
+            background-image: url(http://www.amir.ninja/content/images/2015/12/Hello-World.png);
+            background-size: cover;
+            background-position-y: 310px;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+        }
+        .navbar .navbar-nav a {
+            font-size: 1.2em;
+            color: #f0f0f0 !important;
+        }
+        .navbar .navbar-nav a:hover {
+            color: #ffffff !important;
+        }
+    </style>
 </head>
 
 <body ng-app="worldCountries" role="document">
@@ -23,7 +41,9 @@
 </header>
 
 <div class="container theme-showcase" role="main">
-    <div ng-view></div>
+    <div class="content">
+        <div ng-view></div>
+    </div>
 </div>
 
 <script src="{% static "angular/angular.js" %}"></script>

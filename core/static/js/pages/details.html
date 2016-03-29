@@ -11,6 +11,14 @@
         margin-bottom: 3px;
         padding: 2px 6px;
     }
+
+    table tr:first-child td {
+        border-top: 0 !important;
+    }
+
+    .row img {
+        padding: 10px;
+    }
 </style>
 
 <div class="row" ng-hide="!country.loaded">
@@ -50,6 +58,6 @@
     </div>
 
     <div class="col-md-6">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ country.name }}&amp;size=450x300&amp;sensor=false">
+        <img class="pull-right" src="https://maps.googleapis.com/maps/api/staticmap?center={{ country.name }}&amp;size=450x300&amp;sensor=false">
     </div>
 </div>
