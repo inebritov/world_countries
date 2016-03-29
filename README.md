@@ -42,6 +42,15 @@ python manage.py collectlanguages
 python manage.py collectcountries
 ```
 
+To see it in admin interface create admin user:
+
+```
+python manage.py createsuperuser
+```
+
+and open `/admin` page in browser.
+
+
 ## Running
 
 ```
