@@ -177,6 +177,4 @@ BOWER_INSTALLED_APPS = [
     'angular-resource#1.5',
     'angular-route#1.5',
     'bootstrap#3.3',
-    'jquery#2.2',
-    'underscore#1.8',
 ]
