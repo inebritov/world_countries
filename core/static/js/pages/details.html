@@ -48,7 +48,7 @@
             <tr>
                 <td><strong>Neighbouring Countries</strong></td>
                 <td>
-                    <div ng-repeat="neighbor in country.neighbors">
+                    <div ng-repeat="neighbor in country.neighbors | orderBy: 'name'">
                         <a ng-href="#/details/{{ neighbor.id }}">{{ neighbor.name }}</a>
                     </div>
                 </td>
